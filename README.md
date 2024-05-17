@@ -178,3 +178,71 @@ DispatchQueue.main.async {
 }
 print("statement Q")
 ```
+
+### 16) Given the following code snippet:
+```swift
+private func testDefer() {
+    defer { print("Defer-1") }
+    defer { print("Defer-2") }
+    defer { print("Defer-3") }
+    print("end of the function!!")
+}
+
+testDefer()
+```
+
+### 17) Given the following code snippet:
+```swift
+private func testDefer() {
+    defer { print("Defer-A") }
+    print("Inside function")
+    defer { print("Defer-B") }
+}
+
+testDefer()
+```
+
+### 18) Given the following code snippet:
+```swift
+private func testDefer() {
+    print("Start")
+    defer { print("Defer-X") }
+    print("Middle")
+    if true {
+        defer { print("Defer-Y") }
+    }
+    print("End")
+}
+
+testDefer()
+```
+
+### 19) Given the following code snippet:
+```swift
+private func testDefer() {
+    defer { print("Defer-1") }
+    if true {
+        defer { print("Defer-2") }
+        print("Inside if")
+    }
+    defer { print("Defer-3") }
+    print("End of function")
+}
+
+testDefer()
+```
+
+### 20) Given the following code snippet:
+```swift
+private func testDefer() {
+    defer { print("Defer-A") }
+    do {
+        defer { print("Defer-B") }
+        print("Inside do")
+    }
+    defer { print("Defer-C") }
+    print("End of function")
+}
+
+testDefer()
+```
